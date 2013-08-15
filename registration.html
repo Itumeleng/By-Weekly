@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registration Page</title>
+</head>
+<script language="javascript" type="text/javascript">
+function Validate(input)  
+{  
+	var userVal = /^[\w\d\_\.]{4,}$/;  
+	if(document.getElementById("text_username").value.match(userVal))  
+	{  
+		document.myform.text_username.focus();  
+		return true;  
+	}  
+	else  
+	{  
+		alert("Username has character only!");  
+		document.myform.text_username.focus();  
+		return false;  
+	}
+	
+	var nameVal = /^[\w\.\']{2,}([\s][\w\.\']{2,})+$/;  
+	if(document.getElementById("text_name").value.match(nameVal))  
+	{  
+		document.myform.text_name.focus();  
+		return true;  
+	}  
+	else  
+	{  
+		alert("Name has character only!");  
+		document.myform.text_name.focus();  
+		return false;  
+	}
+	
+	var emailVal = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+	if(document.getElementById("text_email").value.match(emailVal))  
+	{  
+		document.myform.text_email.focus();  
+		return true;  
+	}  
+	else  
+	{  
+		alert("You have entered an wrong email address!");  
+		document.myform.text_email.focus();  
+		return false;  
+	}  
+	
+	var mobileNumVal = /^\+?[\d\s]{3,}$/;  
+	if(document.getElementById("text_mobileNum").value.match(mobileNumVal))  
+	{  
+		document.myform.text_mobileNum.focus();  
+		return true;  
+	}  
+	else  
+	{  
+		alert("Mobile has numeric only!");  
+		document.myform.text_mobileNum.focus();  
+		return false;  
+	}
+	
+	var passVal = /^.{6,}$/;  
+	if(document.getElementById("text_pass").value.match(passVal))  
+	{  
+		document.myform.text_pass.focus();  
+		return true;  
+	}  
+	else  
+	{  
+		alert("Your password must at least have 6 symbols");  
+		document.myform.text_pass.focus();  
+		return false;  
+	}
+	
+	 var repassVal = /^.{6,}$/;  
+	if(document.getElementById("text_repass").value.match(repassVal))  
+	{  
+		document.myform.text_repass.focus();  
+		return true;  
+	}  
+	else  
+	{  
+		alert("Confirm Password doesnot match!");  
+		document.myform.text_repass.focus();  
+		return false;  
+	} 
+}
+ </script>
+
+<body style="background-color:#FFCC99">
+<form id="form1" name="form1" method="post" action="registration.php">
+         <center>
+             <h2>Registration Page</h2>
+     <table border="2">
+        <tr>
+         <td width="179">Username</td>
+     <td><label>
+       <input name="username" type="text" id="username" />
+     </label></td>
+   </tr>
+    <tr>
+     <td width="179">First/Last Name </td>
+     <td><label>
+       <input name="name" type="text" id="name" />
+     </label></td>
+   </tr>
+   <tr>
+     <td width="179">Email address </td>
+     <td><label>
+       <input name="email" type="text" id="email" />
+     </label></td>
+   </tr>
+    <tr>
+     <td width="179">Mobile Number</td>
+     <td><label>
+       <input name="mobileNum" type="text" id="mobileNum" />
+     </label></td>
+   </tr>
+   <tr>
+     <td>Password </td>
+     <td><label>
+       <input name="pass" type="password" id="pass" />
+     </label></td>
+   </tr>
+   <tr>
+     <td>Confirm Password</td>
+     <td><label>
+       <input name="repass" type="password" id="repass" />
+     </label></td>
+   </tr>
+   <tr align="center">
+     <td colspan="2"><label>
+       <input type="submit" name="submit" value="Submit" onclick="Validate(document.myform)" />
+     </label></td>
+     </tr>
+ </table>
+ </center>
+ </form>
+</body>
+</html>
